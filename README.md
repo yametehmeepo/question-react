@@ -1,12 +1,16 @@
 # question-react
-在网上找的用react做的一个仿知乎添加问题的demo
+在网上找的用react做的一个仿知乎添加问题的demo  
+
+#### 效果图:  
+![效果图](src/img/1.png)
 
 
+#### 学会:  
 动态添加删除class时，用ES6字符串模版
 <code>className={&#96;questionform${this.props.showquestionaddpanel?' on':''}&#96;}</code>
-##### 用<code>&#96;</code>（反引号）标识，用${}将变量括起来。
+用<code>&#96;</code>（反引号）标识，用${}将变量括起来。
 
-巩固  
+#### 巩固:  
 1:ref回调函数用法  
 2:去除字符串左右空格的trim函数  
 3:状态提升  
