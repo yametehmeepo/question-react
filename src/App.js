@@ -19,9 +19,11 @@ class App extends Component {
           des: '理性探讨，请勿撕逼。产品经理的主要工作职责是产品设计。接受来自其他部门的需求，经过设计后交付研发。但这里有好些职责不清楚的地方。',
           vote: 12,
         }
-      ]
+      ],
+      showquestionaddpanel: false,
     };
     this.changeVote = this.changeVote.bind(this);
+    this.showtoggle = this.showtoggle.bind(this);
   }
   componentWillMount(){
     
@@ -31,14 +33,19 @@ class App extends Component {
       questionlist
     })
   }
+  showtoggle(){
+    this.setState({
+      showquestionaddpanel: !this.state.showquestionaddpanel
+    })
+  }
   render() {
     var questionlist = this.state.questionlist.sort((a,b) => {
       return (b.vote - a.vote);
     });
     return (
       <div className="App">
-        <QuestionHeader questionlist={questionlist} />
-        <QuestionBody questionlist={questionlist} changeVote={this.changeVote}/>
+        <QuestionHeader showtoggle={this.showtoggle} showquestionaddpanel={this.state.showquestionaddpanel}/>
+        <QuestionBody showquestionaddpanel={this.state.showquestionaddpanel} questionlist={questionlist} changeVote={this.changeVote}/>
       </div>
     );
   }

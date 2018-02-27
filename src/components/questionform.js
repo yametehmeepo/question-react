@@ -31,7 +31,7 @@ export default class QuestionForm extends Component {
 	}
 	render(){
 		return (
-			<div className="questionform">
+			<div className="questionform" style={{display:this.props.showquestionaddpanel?'block':'none'}}>
 				<form action="" ref={form => this.form=form}>
 					<div className="form-group">
 						<p className="title">问题</p>

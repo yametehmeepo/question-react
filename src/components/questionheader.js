@@ -7,7 +7,7 @@ export default class QuestionHeader extends React.Component {
 			<div className="questionheader">
 				<div className="container">
 					<h1>React 问答</h1>
-					<AddButton />
+					<AddButton {...this.props}/>
 				</div>
 			</div>
 		)
