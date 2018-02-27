@@ -20,13 +20,16 @@ class App extends Component {
           vote: 22,
         }
       ]
-    }
+    };
+    this.changeVote = this.changeVote.bind(this);
   }
   componentWillMount(){
-    var questionlist = this.state.questionlist.sort((a,b) => {
-      return (b.vote - a.vote);
-    });
-    console.log(questionlist);
+    
+  }
+  changeVote(questionlist){
+    this.setState({
+      questionlist
+    })
   }
   render() {
     var questionlist = this.state.questionlist.sort((a,b) => {
@@ -35,7 +38,7 @@ class App extends Component {
     return (
       <div className="App">
         <QuestionHeader questionlist={questionlist} />
-        <QuestionBody questionlist={questionlist} />
+        <QuestionBody questionlist={questionlist} changeVote={this.changeVote}/>
       </div>
     );
   }
