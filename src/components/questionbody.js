@@ -7,7 +7,7 @@ export default class QuestionBody extends Component {
 		return (
 			<div className="questionbody">
 				<div className="container">
-					<QuestionForm />
+					<QuestionForm {...this.props}/>
 					<QuestionContent {...this.props} />
 				</div>
 			</div>

@@ -10,11 +10,9 @@ export default class QuestionItem extends Component {
 		var newvote = questionlist.vote;
 		if(flag>0){
 			newvote += 1;
-			console.log(newvote);
 			this.props.changeVote(index,newvote);
 		}else{
 			newvote -= 1;
-			console.log(newvote);
 			this.props.changeVote(index,newvote);
 		}
 	}
